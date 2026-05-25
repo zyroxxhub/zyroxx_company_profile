@@ -42,16 +42,28 @@ export const FAQ: React.FC = () => {
       <div className="ambient-glow" style={{ top: '20%', left: '5%' }}></div>
 
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="section-header"
+        >
           <span className="section-subtitle">Got Questions?</span>
           <h2 className="section-title gradient-text">Frequently Asked Questions</h2>
           <p className="section-description">
             Here are short answers to the questions we receive most frequently. 
             If you need more details, reach out to our team via the contact form below.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="faq-accordion-container">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="faq-accordion-container"
+        >
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
@@ -96,7 +108,7 @@ export const FAQ: React.FC = () => {
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

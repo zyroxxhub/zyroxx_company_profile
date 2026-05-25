@@ -87,17 +87,29 @@ export const Testimonials: React.FC = () => {
       <div className="ambient-glow-purple" style={{ bottom: '10%', left: '10%' }}></div>
 
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="section-header"
+        >
           <span className="section-subtitle">Testimonials</span>
           <h2 className="section-title gradient-text">What Our Clients Say</h2>
           <p className="section-description">
             Don't just take our word for it. We partner with innovators worldwide to 
             engineer software products that deliver real value.
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonials Slider */}
-        <div className="testimonials-slider-container">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="testimonials-slider-container"
+        >
           <div className="testimonials-slider-box glass-panel">
             
             <div className="quote-mark">“</div>
@@ -161,7 +173,7 @@ export const Testimonials: React.FC = () => {
             </div>
 
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

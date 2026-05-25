@@ -14,12 +14,13 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
 import Workflow from './components/Workflow';
 import Pricing from './components/Pricing';
-import Team from './components/Team';
+// import Team from './components/Team';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import FloatingContact from './components/FloatingContact';
+import AnimatedBackground from './components/AnimatedBackground';
 
 export const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +35,8 @@ export const App: React.FC = () => {
 
       {!isLoading && (
         <div className="app-shell">
-          {/* Global Sticky Components */}
+          {/* Global Sticky / Background Components */}
+          <AnimatedBackground />
           <Navbar />
           <ScrollToTop />
           <FloatingContact />
@@ -49,7 +51,7 @@ export const App: React.FC = () => {
             <WhyChooseUs />
             <Workflow />
             <Pricing />
-            <Team />
+            {/* <Team /> */}
             <Testimonials />
             <FAQ />
             <Contact />

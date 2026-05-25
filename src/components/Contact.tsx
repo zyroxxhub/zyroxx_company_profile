@@ -93,18 +93,30 @@ export const Contact: React.FC = () => {
       <div className="ambient-glow-purple" style={{ top: '-10%', left: '10%' }}></div>
 
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="section-header"
+        >
           <span className="section-subtitle">Get In Touch</span>
           <h2 className="section-title gradient-text">Start Your Project</h2>
           <p className="section-description">
             Ready to convert your ideas into production-ready software? 
             Send us a message and our lead systems architect will get back to you within 24 hours.
           </p>
-        </div>
+        </motion.div>
 
         <div className="contact-grid">
           {/* Left Column: Info & Map Mock */}
-          <div className="contact-info-panel">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="contact-info-panel"
+          >
             
             <div className="info-cards">
               <div className="info-card-item glass-panel">
@@ -161,10 +173,16 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Validation Form */}
-          <div className="contact-form-panel glass-panel">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="contact-form-panel glass-panel"
+          >
             <AnimatePresence mode="wait">
               {submitStatus === 'success' ? (
                 <motion.div 
@@ -270,7 +288,7 @@ export const Contact: React.FC = () => {
                 </motion.form>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

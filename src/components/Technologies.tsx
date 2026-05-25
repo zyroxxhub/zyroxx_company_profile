@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export const Technologies: React.FC = () => {
   const techList = [
@@ -22,16 +23,28 @@ export const Technologies: React.FC = () => {
   return (
     <section className="tech-section">
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="section-header"
+        >
           <span className="section-subtitle">Our Stack</span>
           <h2 className="section-title gradient-text">Technologies We Trust</h2>
           <p className="section-description">
             We leverage industry-standard frameworks and cloud architectures to design
             safe, fast, and highly extensible platforms.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="marquee-wrapper">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="marquee-wrapper"
+        >
           <div className="marquee-fade-left"></div>
           <div className="marquee-fade-right"></div>
           
@@ -46,7 +59,7 @@ export const Technologies: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

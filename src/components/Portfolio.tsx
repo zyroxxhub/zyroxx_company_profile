@@ -105,17 +105,29 @@ export const Portfolio: React.FC = () => {
       <div className="ambient-glow-purple" style={{ bottom: '0', right: '10%' }}></div>
 
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="section-header"
+        >
           <span className="section-subtitle">Portfolio</span>
           <h2 className="section-title gradient-text">Featured Projects</h2>
           <p className="section-description">
             Explore a curated selection of our high-end engineering deliverables. 
             We build systems that combine flawless logic with visual elegance.
           </p>
-        </div>
+        </motion.div>
 
         {/* Filter Controls */}
-        <div className="portfolio-filters">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="portfolio-filters"
+        >
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -126,7 +138,7 @@ export const Portfolio: React.FC = () => {
               <span>{cat.label}</span>
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Portfolio Grid */}
         <motion.div 

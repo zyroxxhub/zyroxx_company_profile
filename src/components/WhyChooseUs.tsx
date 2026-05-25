@@ -59,14 +59,20 @@ export const WhyChooseUs: React.FC = () => {
       <div className="ambient-glow" style={{ bottom: '-15%', left: '20%' }}></div>
 
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="section-header"
+        >
           <span className="section-subtitle">Why Choose Us</span>
           <h2 className="section-title gradient-text">Engineering You Can Trust</h2>
           <p className="section-description">
             We do not cut corners. We focus on producing code and designs that stand the 
             test of time, so your digital assets remain secure, fast, and scalable.
           </p>
-        </div>
+        </motion.div>
 
         <div className="why-us-grid">
           {features.map((feat, idx) => (

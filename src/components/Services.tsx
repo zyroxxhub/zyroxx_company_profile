@@ -134,14 +134,20 @@ export const Services: React.FC = () => {
       <div className="ambient-glow" style={{ top: '20%', right: '0' }}></div>
       
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="section-header"
+        >
           <span className="section-subtitle">Our Services</span>
           <h2 className="section-title gradient-text">What We Do Best</h2>
           <p className="section-description">
             We deliver end-to-end digital engineering. From pixel-perfect frontends to robust,
             high-throughput backends, we cover the full cycle of modern IT needs.
           </p>
-        </div>
+        </motion.div>
 
         <div className="services-grid">
           {servicesList.map((service, idx) => (

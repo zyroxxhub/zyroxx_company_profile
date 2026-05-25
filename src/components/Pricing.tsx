@@ -71,14 +71,20 @@ export const Pricing: React.FC = () => {
       <div className="ambient-glow" style={{ top: '-10%', right: '15%' }}></div>
       
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="section-header"
+        >
           <span className="section-subtitle">Flexible Rates</span>
           <h2 className="section-title gradient-text">Transparent Pricing</h2>
           <p className="section-description">
             Choose the scope that matches your business timeline. No hidden costs. 
             All projects are backed by absolute code ownership contracts.
           </p>
-        </div>
+        </motion.div>
 
         <div className="pricing-grid">
           {plans.map((plan, idx) => (

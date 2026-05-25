@@ -65,7 +65,13 @@ export const About: React.FC = () => {
       <div className="container about-container">
         
         {/* Left Side: Story & Values */}
-        <div className="about-text-content">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="about-text-content"
+        >
           <span className="section-subtitle">About Company</span>
           <h2 className="section-title gradient-text">
             Crafting Digital Solutions with Engineering Excellence
@@ -109,10 +115,16 @@ export const About: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Side: Statistics Grid */}
-        <div className="about-stats-container">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="about-stats-container"
+        >
           <div className="stats-grid">
             <motion.div 
               whileHover={{ y: -5 }}
@@ -154,7 +166,49 @@ export const About: React.FC = () => {
             </p>
             <span className="side-visual-author">— Zyroxx Tech Lead</span>
           </div>
-        </div>
+
+          <div className="engineering-monitor-card glass-panel">
+            <div className="monitor-header">
+              <div className="pulse-indicator">
+                <span className="pulse-dot"></span>
+                <span className="pulse-text">ZYROXX SECURE ENGINE v2.4</span>
+              </div>
+              <span className="system-status-badge">ONLINE</span>
+            </div>
+            
+            <div className="monitor-body">
+              <div className="metric-row">
+                <span className="metric-label">Uptime Integrity</span>
+                <span className="metric-value">99.99%</span>
+                <div className="progress-bar-bg">
+                  <div className="progress-bar-fill uptime" style={{ width: '99.99%' }}></div>
+                </div>
+              </div>
+              
+              <div className="metric-row">
+                <span className="metric-label">Security Shield</span>
+                <span className="metric-value">100% Passed</span>
+                <div className="progress-bar-bg">
+                  <div className="progress-bar-fill security" style={{ width: '100%' }}></div>
+                </div>
+              </div>
+              
+              <div className="metric-row">
+                <span className="metric-label">Clean Code Index</span>
+                <span className="metric-value">99.8%</span>
+                <div className="progress-bar-bg">
+                  <div className="progress-bar-fill clean-code" style={{ width: '99.8%' }}></div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="monitor-terminal">
+              <div className="terminal-line"><span className="time">[17:05:12]</span> &gt; CI/CD Pipeline build #409 passed</div>
+              <div className="terminal-line"><span className="time">[17:05:13]</span> &gt; Security audit: 0 vulnerabilities found</div>
+              <div className="terminal-line"><span className="time">[17:05:14]</span> &gt; Server cluster health: Excellent</div>
+            </div>
+          </div>
+        </motion.div>
 
       </div>
     </section>

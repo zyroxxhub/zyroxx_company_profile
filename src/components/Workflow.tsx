@@ -60,19 +60,31 @@ export const Workflow: React.FC = () => {
       <div className="ambient-glow" style={{ top: '25%', left: '-10%' }}></div>
       
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="section-header"
+        >
           <span className="section-subtitle">Workflow</span>
           <h2 className="section-title gradient-text">How We Work</h2>
           <p className="section-description">
             We follow a structured engineering workflow to make sure your project is 
             delivered on-time, fully documented, and robust.
           </p>
-        </div>
+        </motion.div>
 
         {/* Process Timeline */}
         <div className="timeline-container">
           {/* Central Line */}
-          <div className="timeline-spine"></div>
+          <motion.div 
+            initial={{ height: 0 }}
+            whileInView={{ height: '100%' }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            className="timeline-spine"
+          ></motion.div>
 
           <div className="timeline-steps">
             {steps.map((step, idx) => {
