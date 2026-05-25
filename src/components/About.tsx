@@ -16,7 +16,7 @@ const AnimatedCounter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
     if (isInView) {
       let start = 0;
       const duration = 1500; // 1.5s
-      const increment = value / (duration / 16); // ~60fps
+      const increment = value / (duration / 16); 
       
       const timer = setInterval(() => {
         start += increment;
